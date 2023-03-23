@@ -8,8 +8,8 @@ setup_info = {
     "description": "A package to support writing games with PyGame",
     # TODO: Optional, add more information to the setup.py script
     # "long_description": open("README.md").read(),
-    # "author": "Tuffy Titan",
-    # "author_email": "tuffy@csu.fullerton.edu",
+    "author": "EPW80",
+    "author_email": "epwilliams@csu.fullerton.edu",
     # "url": "https://some.url/somehwere/maybe/github",
 }
 

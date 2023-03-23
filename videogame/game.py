@@ -2,7 +2,6 @@
 
 import os
 import warnings
-
 import pygame
 
 import rgbcolors
