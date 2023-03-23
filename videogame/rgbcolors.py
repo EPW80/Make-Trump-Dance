@@ -1,3 +1,14 @@
+# Erik Williams
+# CPSC 386-02
+# 2023-03-23
+# epwilliams@csu.fullerton.edu
+# @EPW80
+#
+# Lab 00-00
+#
+# This my pygame project!
+#
+
 """A list of RGB colors produced by X11's showrgb command. The color database
     is probably from an IRIX system circa 2005"""
 

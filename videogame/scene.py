@@ -1,3 +1,14 @@
+# Erik Williams
+# CPSC 386-02
+# 2023-03-23
+# epwilliams@csu.fullerton.edu
+# @EPW80
+#
+# Lab 00-00
+#
+# This my pygame project!
+#
+
 """Scene objects for making games with PyGame."""
 
 import pygame
