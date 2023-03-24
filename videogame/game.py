@@ -62,7 +62,8 @@ class VideoGame:
 
     def build_scene_graph(self):
         """Build the scene graph for the game."""
-        raise NotImplementedError
+        self._scene_graph = [PolygonTitleScene(self._screen)]
+        return self._scene_graph
 
     def run(self):
         """Run the game; the main game loop."""
