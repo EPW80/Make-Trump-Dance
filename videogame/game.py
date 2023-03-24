@@ -6,7 +6,7 @@
 #
 # Lab 00-00
 #
-# This my pygame project!
+# This is my pygame project!
 #
 
 """Game objects to create PyGame based games."""
@@ -75,12 +75,13 @@ class MyVideoGame(VideoGame):
     def __init__(self):
         """Init the Pygame demo."""
         # TODO: initialize the window and set the title to "Hello"
-        super().__init__()
+        super().__init__(window_title="Hello!")
         # TODO: Define an instance variable named self._main_dir which is the absolute path to the parent directory of this file, __file__.
         # TODO: Define an instance variable named self._data_dir which is self._main_dir joined with "data".
         # TODO: build the game's scene graph
-        self._main_dir = None
-        self._data_dir = None
+        self._main_dir = os.path.abspath(os.path.dirname(__file__))
+        self._data_dir = os.path.join(self._main_dir, "data")
+        self.build_scene_graph()
         # print(f"Our main directory is {self._main_dir}")
         # print(f"Our data directory is {self._data_dir}")
 
