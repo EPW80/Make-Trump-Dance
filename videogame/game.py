@@ -67,7 +67,28 @@ class VideoGame:
 
     def run(self):
         """Run the game; the main game loop."""
-        raise NotImplementedError
+        self.build_scene_graph()
+        scene_iterator = iter(self.scene_graph)
+        while not self._game_is_over:
+            try:
+                current_scene = next(scene_iterator)
+            except StopIteration:
+                break
+            current_scene.start_scene()
+            while current_scene.is_valid():
+                self._clock.tick(current_scene.frame_rate())
+                for event in pygame.event.get():
+                    current_scene.process_event(event)
+                    if event.type == pygame.QUIT:
+                        self._game_is_over = True
+                    current_scene.update()
+                    current_scene.render()
+        self.quit()
+    
+    def quit(self):
+        """Quit the game."""
+        self._game_is_over = True
+        pygame.quit()
 
 
 class MyVideoGame(VideoGame):
