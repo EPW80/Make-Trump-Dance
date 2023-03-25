@@ -26,12 +26,6 @@ def display_info():
     print(pygame.display.Info())
 
 
-# If you're interested in using abstract base classes, feel free to rewrite
-# these classes.
-# For more information about Python Abstract Base classes, see
-# https://docs.python.org/3.8/library/abc.html
-
-
 class VideoGame:
     """Base class for creating PyGame games."""
 
@@ -84,7 +78,7 @@ class VideoGame:
                     current_scene.update()
                     current_scene.render()
         self.quit()
-    
+
     def quit(self):
         """Quit the game."""
         self._game_is_over = True
@@ -110,23 +104,24 @@ class MyVideoGame(VideoGame):
     def build_scene_graph(self):
         """Build scene graph for the game demo."""
         # TODO: implement how the scene graph for this game is built.
-        raise NotImplementedError
+        self._scene_graph = [PolygonTitleScene(self._screen)]
+        return self._scene_graph
 
     def run(self):
         """Run the game; the main game loop."""
         scene_iterator = iter(self.scene_graph)
         while not self._game_is_over:
-            current_scene = next(scene_iterator)
+            try:
+                current_scene = next(scene_iterator)
+            except StopIteration:
+                break
             current_scene.start_scene()
             while current_scene.is_valid():
                 self._clock.tick(current_scene.frame_rate())
                 for event in pygame.event.get():
                     current_scene.process_event(event)
-                current_scene.update_scene()
-                current_scene.draw()
-                current_scene.render_updates()
-                pygame.display.update()
-            current_scene.end_scene()
-            self._game_is_over = True
-        pygame.quit()
-        return 0
+                    if event.type == pygame.QUIT:
+                        self._game_is_over = True
+                    current_scene.update()
+                    current_scene.render()
+        self.quit()
