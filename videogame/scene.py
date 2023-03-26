@@ -15,12 +15,6 @@ import pygame
 import rgbcolors
 
 
-# If you're interested in using abstract base classes, feel free to rewrite
-# these classes.
-# For more information about Python Abstract Base classes, see
-# https://docs.python.org/3.8/library/abc.html
-
-
 class Scene:
     """Base class for making PyGame Scenes."""
 
