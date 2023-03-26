@@ -35,7 +35,7 @@ class VideoGame:
         window_height=800,
         window_title="My Awesome Game",
     ):
-        """Initialize a new game with the given window size and window title."""
+        """Initialize a new game with the given window size and window title"""
         pygame.init()
         self._window_size = (window_width, window_height)
         self._clock = pygame.time.Clock()
@@ -56,7 +56,7 @@ class VideoGame:
 
     def build_scene_graph(self):
         """Build the scene graph for the game."""
-        self._scene_graph = [PolygonTitleScene(self._screen)]
+        self._scene_graph = [PolygonTitleScene(self._screen, title="My Game")]
         return self._scene_graph
 
     def run(self):
@@ -90,11 +90,7 @@ class MyVideoGame(VideoGame):
 
     def __init__(self):
         """Init the Pygame demo."""
-        # TODO: initialize the window and set the title to "Hello"
-        super().__init__(window_title="Hello!")
-        # TODO: Define an instance variable named self._main_dir which is the absolute path to the parent directory of this file, __file__.
-        # TODO: Define an instance variable named self._data_dir which is self._main_dir joined with "data".
-        # TODO: build the game's scene graph
+        super().__init__(window_title="Hello")
         self._main_dir = os.path.abspath(os.path.dirname(__file__))
         self._data_dir = os.path.join(self._main_dir, "data")
         self.build_scene_graph()
@@ -103,8 +99,7 @@ class MyVideoGame(VideoGame):
 
     def build_scene_graph(self):
         """Build scene graph for the game demo."""
-        # TODO: implement how the scene graph for this game is built.
-        self._scene_graph = [PolygonTitleScene(self._screen)]
+        self._scene_graph = [PolygonTitleScene(self._screen, title="My Game" )]
         return self._scene_graph
 
     def run(self):
