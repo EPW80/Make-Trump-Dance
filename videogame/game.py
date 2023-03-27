@@ -18,6 +18,9 @@ import pygame
 import rgbcolors
 from scene import PolygonTitleScene
 
+def main():
+        game = MyVideoGame()
+        game.run()
 
 def display_info():
     """Print out information about the display driver and video information."""
@@ -84,6 +87,8 @@ class VideoGame:
         self._game_is_over = True
         pygame.quit()
 
+    
+
 
 class MyVideoGame(VideoGame):
     """Show a colored window with a colored message and a polygon."""
@@ -99,7 +104,7 @@ class MyVideoGame(VideoGame):
 
     def build_scene_graph(self):
         """Build scene graph for the game demo."""
-        self._scene_graph = [PolygonTitleScene(self._screen, title="My Game" )]
+        self._scene_graph = [PolygonTitleScene(self._screen, title="My Game")]
         return self._scene_graph
 
     def run(self):
