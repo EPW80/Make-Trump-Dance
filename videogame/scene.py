@@ -34,8 +34,7 @@ class Scene:
 
     def process_event(self, event):
         """Process a game event by the scene."""
-        # This should be commented out or removed since it generates a lot of noise.
-        # print(str(event))
+
         if event.type == pygame.QUIT:
             print("Good Bye!")
             self._is_valid = False
@@ -105,6 +104,13 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
         # TODO: Have the super/parent class initialized
         # TODO: Ask pygame for the default font at title_size size. Use the font to render the string title and assign this to an instance variable named self._title in the color title_color.
         # TODO: Ask pygame for the default font at 18 point size. Use the font to render the string 'Press any key.' in the color black. Assign the rendered text to an instance variable named self._press_any_key.
+        super().__init__(screen, background_color, soundtrack)
+        self._title_font = pygame.font.Font(None, title_size)
+        self._title = self._title_font.render(title, True, title_color)
+        self._press_any_key_font = pygame.font.Font(None, 18)
+        self._press_any_key = self._title_font.render(
+            "Press any key.", True, rgbcolors.black
+        )
 
     def draw(self):
         """Draw the scene."""
@@ -113,3 +119,18 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
         # TODO: Draw a 100 pixel by 100 pixel rectangle that has it's center located 100 pixels below the center of the window.
         # TODO: Blit the title text to the center of the window.
         # TODO: Blit the press any key message to the bottom of the window. The text should be centered horizontally and be 50 pixels above the bottom edge of the window.
+        super().draw()
+        rect = pygame.Rect(0, 0, 100, 100)
+        rect.center = (
+            self._screen.get_width() // 2,
+            self._screen.get_height() // 2 + 100,
+        )
+        pygame.draw.rect(self._screen, rgbcolors.black, rect)
+        title_pos = self._title.get_rect(
+            center=(self._screen.get_width() // 2, self._screen.get_height() // 2)
+        )
+        self._screen.blit(self._title, title_pos)
+        press_any_key_pos = self._press_any_key.get_rect(
+            midtop=(self._screen.get_width() // 2, self._screen.get_height() - 50)
+        )
+        self._screen.blit(self._press_any_key, press_any_key_pos)
