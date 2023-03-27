@@ -83,7 +83,10 @@ class PressAnyKeyToExitScene(Scene):
         """Process game events."""
         # TODO: Have the super/parent class process the event first before
         # processing the event yourself.
-        # TOOD: If the event type is a keydown event, set self._is_valid to False.
+        # TODO: If the event type is a keydown event, set self._is_valid to False.
+        super().process_event(event)
+        if event.type == pygame.KEYDOWN:
+            self._is_valid = False
 
 
 class PolygonTitleScene(PressAnyKeyToExitScene):
