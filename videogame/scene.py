@@ -134,3 +134,6 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
             midtop=(self._screen.get_width() // 2, self._screen.get_height() - 50)
         )
         self._screen.blit(self._press_any_key, press_any_key_pos)
+
+    def update_scene(self):
+        pass

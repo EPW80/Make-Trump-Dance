@@ -18,9 +18,11 @@ import pygame
 import rgbcolors
 from scene import PolygonTitleScene
 
+
 def main():
-        game = MyVideoGame()
-        game.run()
+    game = MyVideoGame()
+    game.run()
+
 
 def display_info():
     """Print out information about the display driver and video information."""
@@ -78,7 +80,7 @@ class VideoGame:
                     current_scene.process_event(event)
                     if event.type == pygame.QUIT:
                         self._game_is_over = True
-                    current_scene.update()
+                    current_scene.update_scene()
                     current_scene.render()
         self.quit()
 
@@ -86,8 +88,6 @@ class VideoGame:
         """Quit the game."""
         self._game_is_over = True
         pygame.quit()
-
-    
 
 
 class MyVideoGame(VideoGame):
@@ -122,6 +122,6 @@ class MyVideoGame(VideoGame):
                     current_scene.process_event(event)
                     if event.type == pygame.QUIT:
                         self._game_is_over = True
-                    current_scene.update()
-                    current_scene.render()
+                    current_scene.update_scene()
+                    current_scene.draw()
         self.quit()
