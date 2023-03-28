@@ -82,6 +82,7 @@ class VideoGame:
                         self._game_is_over = True
                     current_scene.update_scene()
                     current_scene.draw()
+                    pygame.display.flip()
         self.quit()
 
     def quit(self):
@@ -104,7 +105,7 @@ class MyVideoGame(VideoGame):
 
     def build_scene_graph(self):
         """Build scene graph for the game demo."""
-        self._scene_graph = [PolygonTitleScene(self._screen, title="My Game", title_color=rgbcolors.red, background_color=rgbcolors.hot_pink)]
+        self._scene_graph = [PolygonTitleScene(self._screen, title="My Game", title_color=rgbcolors.light_sky_blue, background_color=rgbcolors.hot_pink)]
         return self._scene_graph
 
     def run(self):
