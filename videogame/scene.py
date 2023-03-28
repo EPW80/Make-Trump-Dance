@@ -12,6 +12,9 @@
 """Scene objects for making games with PyGame."""
 
 import pygame
+pygame.init()
+pygame.font.init()
+
 import rgbcolors
 
 
@@ -80,9 +83,6 @@ class PressAnyKeyToExitScene(Scene):
 
     def process_event(self, event):
         """Process game events."""
-        # TODO: Have the super/parent class process the event first before
-        # processing the event yourself.
-        # TODO: If the event type is a keydown event, set self._is_valid to False.
         super().process_event(event)
         if event.type == pygame.KEYDOWN:
             self._is_valid = False
@@ -108,7 +108,7 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
         self._title_font = pygame.font.Font(None, title_size)
         self._title = self._title_font.render(title, True, title_color)
         self._press_any_key_font = pygame.font.Font(None, 18)
-        self._press_any_key = self._title_font.render(
+        self._press_any_key = self._press_any_key_font.render(
             "Press any key.", True, rgbcolors.black
         )
 
@@ -125,13 +125,13 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
             self._screen.get_width() // 2,
             self._screen.get_height() // 2 + 100,
         )
-        pygame.draw.rect(self._screen, rgbcolors.black, rect)
+        pygame.draw.rect(self._screen, rgbcolors.yellow, rect)
         title_pos = self._title.get_rect(
             center=(self._screen.get_width() // 2, self._screen.get_height() // 2)
         )
         self._screen.blit(self._title, title_pos)
         press_any_key_pos = self._press_any_key.get_rect(
-            midtop=(self._screen.get_width() // 2, self._screen.get_height() - 50)
+            midbottom=(self._screen.get_width() // 2, self._screen.get_height() - 50)
         )
         self._screen.blit(self._press_any_key, press_any_key_pos)
 
