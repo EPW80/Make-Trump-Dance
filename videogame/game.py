@@ -18,8 +18,8 @@ import pygame
 import rgbcolors
 from scene import PolygonTitleScene
 
-
 def main():
+    """Run the game."""
     game = MyVideoGame()
     game.run()
 
@@ -61,7 +61,7 @@ class VideoGame:
 
     def build_scene_graph(self):
         """Build the scene graph for the game."""
-        self._scene_graph = [PolygonTitleScene(self._screen, title="Welcome")]
+        self._scene_graph = [PolygonTitleScene(self._screen, title="Scene")]
         return self._scene_graph
 
     def run(self):
@@ -96,7 +96,7 @@ class MyVideoGame(VideoGame):
 
     def __init__(self):
         """Init the Pygame demo."""
-        super().__init__(window_title="Welcome")
+        super().__init__(window_title="Scene Demo")
         self._main_dir = os.path.abspath(os.path.dirname(__file__))
         self._data_dir = os.path.join(self._main_dir, "data")
         self.build_scene_graph()
@@ -105,7 +105,12 @@ class MyVideoGame(VideoGame):
 
     def build_scene_graph(self):
         """Build scene graph for the game demo."""
-        self._scene_graph = [PolygonTitleScene(self._screen, title="RUNNN!", title_color=rgbcolors.light_sky_blue, background_color=rgbcolors.hot_pink, soundtrack="videogame/data/8bp051-06-random-happy_ending_after_all.mp3")]
+        self._scene_graph = [PolygonTitleScene(self._screen,
+                                               title="Welcome to my scene",
+                                               title_color=rgbcolors.light_sky_blue,
+                                               background_color=rgbcolors.hot_pink,
+                                               soundtrack=
+                                               "videogame/data/tune.mp3")]
         return self._scene_graph
 
     def run(self):
