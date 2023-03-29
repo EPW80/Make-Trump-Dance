@@ -18,6 +18,7 @@ import pygame
 import rgbcolors
 from scene import PolygonTitleScene
 
+
 def main():
     """Run the game."""
     game = MyVideoGame()
@@ -105,12 +106,15 @@ class MyVideoGame(VideoGame):
 
     def build_scene_graph(self):
         """Build scene graph for the game demo."""
-        self._scene_graph = [PolygonTitleScene(self._screen,
-                                               title="Welcome to my scene",
-                                               title_color=rgbcolors.light_sky_blue,
-                                               background_color=rgbcolors.hot_pink,
-                                               soundtrack=
-                                               "videogame/data/tune.mp3")]
+        self._scene_graph = [
+            PolygonTitleScene(
+                self._screen,
+                title="Welcome to my scene",
+                title_color=rgbcolors.light_sky_blue,
+                background_color=rgbcolors.hot_pink,
+                soundtrack="videogame/data/tune.mp3"
+            )
+        ]
         return self._scene_graph
 
     def run(self):
