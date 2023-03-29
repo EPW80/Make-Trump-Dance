@@ -61,7 +61,7 @@ class VideoGame:
 
     def build_scene_graph(self):
         """Build the scene graph for the game."""
-        self._scene_graph = [PolygonTitleScene(self._screen, title="My Game")]
+        self._scene_graph = [PolygonTitleScene(self._screen, title="Welcome")]
         return self._scene_graph
 
     def run(self):
@@ -96,7 +96,7 @@ class MyVideoGame(VideoGame):
 
     def __init__(self):
         """Init the Pygame demo."""
-        super().__init__(window_title="My Game")
+        super().__init__(window_title="Welcome")
         self._main_dir = os.path.abspath(os.path.dirname(__file__))
         self._data_dir = os.path.join(self._main_dir, "data")
         self.build_scene_graph()
@@ -105,7 +105,7 @@ class MyVideoGame(VideoGame):
 
     def build_scene_graph(self):
         """Build scene graph for the game demo."""
-        self._scene_graph = [PolygonTitleScene(self._screen, title="My Game", title_color=rgbcolors.light_sky_blue, background_color=rgbcolors.hot_pink)]
+        self._scene_graph = [PolygonTitleScene(self._screen, title="RUNNN!", title_color=rgbcolors.light_sky_blue, background_color=rgbcolors.hot_pink, soundtrack="videogame/data/8bp051-06-random-happy_ending_after_all.mp3")]
         return self._scene_graph
 
     def run(self):
