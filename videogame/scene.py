@@ -116,17 +116,21 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
         rect = pygame.Rect(0, 0, 100, 100)
         rect.center = (
             self._screen.get_width() // 2,
-            self._screen.get_height() // 2 + 100,
+            self._screen.get_height() // 2,
         )
         pygame.draw.rect(self._screen, rgbcolors.yellow, rect)
         title_pos = self._title.get_rect(
-            center=(self._screen.get_width() // 2,
-                    self._screen.get_height() // 2)
+            midbottom=(
+                self._screen.get_width() // 2,
+                self._screen.get_height() // 2 - 100,
+            )
         )
         self._screen.blit(self._title, title_pos)
         press_any_key_pos = self._press_any_key.get_rect(
-            midbottom=(self._screen.get_width() // 2,
-                       self._screen.get_height() - 150)
+            midtop=(
+                self._screen.get_width() // 2,
+                self._screen.get_height() // 2 + 200,
+            )
         )
         self._screen.blit(self._press_any_key, press_any_key_pos)
 
