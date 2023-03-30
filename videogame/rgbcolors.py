@@ -4,9 +4,9 @@
 # epwilliams@csu.fullerton.edu
 # @EPW80
 #
-# Lab 00-00
+# Lab 04-00
 #
-# This my pygame project!
+# This is my pygame project!
 #
 
 """A list of RGB colors produced by X11's showrgb command. The color database

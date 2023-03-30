@@ -4,7 +4,7 @@
 # epwilliams@csu.fullerton.edu
 # @EPW80
 #
-# Lab 00-00
+# Lab 04-00
 #
 # This is my pygame project!
 #
