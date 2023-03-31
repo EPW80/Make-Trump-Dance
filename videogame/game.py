@@ -39,7 +39,7 @@ class VideoGame:
         self,
         window_width=800,
         window_height=800,
-        window_title="My Awesome Game",
+        window_title="Never Give Up",
     ):
         """Initialize a new game with the given window size and window title"""
         pygame.init()
@@ -112,7 +112,7 @@ class MyVideoGame(VideoGame):
                 title="Welcome to my scene",
                 title_color=rgbcolors.light_sky_blue,
                 background_color=rgbcolors.hot_pink,
-                soundtrack="videogame/data/tune.mp3"
+                soundtrack="videogame/data/tune.mp3",
             )
         ]
         return self._scene_graph
