@@ -39,10 +39,10 @@ class Scene:
         """Process a game event by the scene."""
 
         if event.type == pygame.QUIT:
-            print("Good Bye!")
+            print("America first!")
             self._is_valid = False
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-            print("Bye bye!")
+            print("America first!")
             self._is_valid = False
 
     def is_valid(self):
@@ -118,7 +118,7 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
             self._screen.get_width() // 2,
             self._screen.get_height() // 2,
         )
-        pygame.draw.rect(self._screen, rgbcolors.yellow, rect)
+        pygame.draw.rect(self._screen, rgbcolors.dark_red, rect)
         title_pos = self._title.get_rect(
             midbottom=(
                 self._screen.get_width() // 2,

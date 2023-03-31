@@ -39,7 +39,7 @@ class VideoGame:
         self,
         window_width=800,
         window_height=800,
-        window_title="Never Give Up",
+        window_title="Game of Death",
     ):
         """Initialize a new game with the given window size and window title"""
         pygame.init()
@@ -62,7 +62,7 @@ class VideoGame:
 
     def build_scene_graph(self):
         """Build the scene graph for the game."""
-        self._scene_graph = [PolygonTitleScene(self._screen, title="Scene")]
+        self._scene_graph = [PolygonTitleScene(self._screen, title="Example of a scene")]
         return self._scene_graph
 
     def run(self):
@@ -97,7 +97,7 @@ class MyVideoGame(VideoGame):
 
     def __init__(self):
         """Init the Pygame demo."""
-        super().__init__(window_title="Scene Demo")
+        super().__init__(window_title="Example of a scene")
         self._main_dir = os.path.abspath(os.path.dirname(__file__))
         self._data_dir = os.path.join(self._main_dir, "data")
         self.build_scene_graph()
@@ -109,10 +109,10 @@ class MyVideoGame(VideoGame):
         self._scene_graph = [
             PolygonTitleScene(
                 self._screen,
-                title="Welcome to my scene",
-                title_color=rgbcolors.light_sky_blue,
-                background_color=rgbcolors.hot_pink,
-                soundtrack="videogame/data/tune.mp3",
+                title="Game of Death",
+                title_color=rgbcolors.red,
+                background_color=rgbcolors.orange_red,
+                soundtrack="videogame/data/tune.mp3"
             )
         ]
         return self._scene_graph
