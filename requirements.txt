@@ -11,6 +11,7 @@ numpy==1.24.2
 packaging==23.0
 pandas==1.5.3
 pathspec==0.11.1
+Pillow==9.4.0
 platformdirs==3.1.1
 pyarrow==11.0.0
 pycodestyle==2.10.0
@@ -23,5 +24,5 @@ six==1.16.0
 tomli==2.0.1
 tomlkit==0.11.6
 typing_extensions==4.5.0
--e git+ssh://git@github.com/cpsc-spring-2023/cpsc-386-04-scene-EPW80.git@9264b0bb94c77f82ddab99588816d13e08e711cf#egg=videogame&subdirectory=videogame
+-e git+ssh://git@github.com/cpsc-spring-2023/cpsc-386-04-scene-EPW80.git@ad50ba9c83ed7b0baf89ffba40b0bd441f4bfe4f#egg=videogame&subdirectory=videogame
 wrapt==1.15.0

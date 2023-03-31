@@ -21,6 +21,8 @@ sys.path.append("videogame")
 
 import game
 
+
+
 if __name__ == "__main__":
     # TODO: Prepare and run the game
     game.main()

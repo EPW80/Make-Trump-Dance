@@ -17,6 +17,8 @@ import rgbcolors
 pygame.init()
 pygame.font.init()
 
+from gif_converter import frames
+
 
 class Scene:
     """Base class for making PyGame Scenes."""
@@ -110,15 +112,32 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
             "Press any key.", True, rgbcolors.black
         )
 
-    def draw(self):
-        """Draw the scene."""
-        super().draw()
-        rect = pygame.Rect(0, 0, 100, 100)
-        rect.center = (
+        new_width = 100
+        new_height = 100
+
+        self.rect = pygame.Rect(0, 0, new_width, new_height)
+        self.rect.center = (
             self._screen.get_width() // 2,
             self._screen.get_height() // 2,
         )
-        pygame.draw.rect(self._screen, rgbcolors.dark_red, rect)
+
+        self._frames = [
+            pygame.image.load(f"frames/frame_{i}.png") for i in range(len(frames))
+        ]
+        self._current_frame = 0
+
+    def draw(self):
+        """Draw the scene."""
+        super().draw()
+        frame = self._frames[self._current_frame]
+
+        gif_position = (
+            (self._screen.get_width() - frame.get_width()) // 2,
+            (self._screen.get_height() - frame.get_height()) // 2,
+        )
+
+        self._screen.blit(frame, gif_position)
+
         title_pos = self._title.get_rect(
             midbottom=(
                 self._screen.get_width() // 2,
@@ -135,4 +154,4 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
         self._screen.blit(self._press_any_key, press_any_key_pos)
 
     def update_scene(self):
-        pass
+        self._current_frame = (self._current_frame + 1) % len(self._frames)

@@ -16,6 +16,8 @@ import warnings
 import pygame
 
 import rgbcolors
+from gif_converter import frames
+
 from scene import PolygonTitleScene
 
 
@@ -39,7 +41,7 @@ class VideoGame:
         self,
         window_width=800,
         window_height=800,
-        window_title="Game of Death",
+        window_title="Make Trump dance!",
     ):
         """Initialize a new game with the given window size and window title"""
         pygame.init()
@@ -62,7 +64,9 @@ class VideoGame:
 
     def build_scene_graph(self):
         """Build the scene graph for the game."""
-        self._scene_graph = [PolygonTitleScene(self._screen, title="Example of a scene")]
+        self._scene_graph = [
+            PolygonTitleScene(self._screen, title="Example of a scene")
+        ]
         return self._scene_graph
 
     def run(self):
@@ -97,7 +101,7 @@ class MyVideoGame(VideoGame):
 
     def __init__(self):
         """Init the Pygame demo."""
-        super().__init__(window_title="Example of a scene")
+        super().__init__(window_title="Trump dance")
         self._main_dir = os.path.abspath(os.path.dirname(__file__))
         self._data_dir = os.path.join(self._main_dir, "data")
         self.build_scene_graph()
@@ -109,10 +113,10 @@ class MyVideoGame(VideoGame):
         self._scene_graph = [
             PolygonTitleScene(
                 self._screen,
-                title="Game of Death",
-                title_color=rgbcolors.red,
-                background_color=rgbcolors.orange_red,
-                soundtrack="videogame/data/tune.mp3"
+                title="Make Trump dance!",
+                title_color=rgbcolors.light_goldenrod_yellow,
+                background_color=rgbcolors.black,
+                soundtrack="videogame/data/tune.mp3",
             )
         ]
         return self._scene_graph
