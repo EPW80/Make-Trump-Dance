@@ -1,14 +1,3 @@
-# Erik Williams
-# CPSC 386-02
-# 2023-03-23
-# epwilliams@csu.fullerton.edu
-# @EPW80
-#
-# Lab 04-00
-#
-# This is my pygame project!
-#
-
 """Game objects to create PyGame based games."""
 
 import os
