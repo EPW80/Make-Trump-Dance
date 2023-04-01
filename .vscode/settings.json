@@ -1,6 +1,0 @@
-{
-    "python.analysis.extraPaths": [
-        "./videogame"
-    ],
-    "python.formatting.provider": "black"
-}
