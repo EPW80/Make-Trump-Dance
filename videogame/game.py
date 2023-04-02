@@ -103,7 +103,7 @@ class MyVideoGame(VideoGame):
             PolygonTitleScene(
                 self._screen,
                 title="Make Trump dance!",
-                title_color=rgbcolors.light_goldenrod_yellow,
+                title_color=rgbcolors.white,
                 background_color=rgbcolors.black,
                 soundtrack="videogame/data/tune.mp3",
             )

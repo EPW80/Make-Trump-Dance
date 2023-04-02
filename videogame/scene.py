@@ -96,9 +96,9 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
         super().__init__(screen, background_color, soundtrack)
         self._title_font = pygame.font.Font(None, title_size)
         self._title = self._title_font.render(title, True, title_color)
-        self._press_any_key_font = pygame.font.Font(None, 18)
+        self._press_any_key_font = pygame.font.Font(None, 22)
         self._press_any_key = self._press_any_key_font.render(
-            "Press any key.", True, rgbcolors.black
+            "Move your mouse", True, rgbcolors.white
         )
 
         new_width = 100
@@ -130,7 +130,7 @@ class PolygonTitleScene(PressAnyKeyToExitScene):
         title_pos = self._title.get_rect(
             midbottom=(
                 self._screen.get_width() // 2,
-                self._screen.get_height() // 2 - 100,
+                self._screen.get_height() // 2 - 350,
             )
         )
         self._screen.blit(self._title, title_pos)
