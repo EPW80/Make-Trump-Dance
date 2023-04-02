@@ -19,7 +19,7 @@ To run the game, navigate to the videogame folder and run the game.py script:
 
 cd videogame
 python game.py
-Upon launching the game, you'll see the main menu scene with the title and the dancing Trump GIF. Press any key to exit the game.
+Upon launching the game, you'll see the main menu scene with the title and the dancing Trump GIF. Press esc key to exit the game.
 ```
 
 ## Project Structure
