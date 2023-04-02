@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Pygame on Web</title>
+    <script type="text/javascript" src="pyodide/pyodide.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        window.languagePluginUrl = "pyodide/";
+        window.addEventListener("load", async function () {
+            await loadPyodide({
+                indexURL: "pyodide/"
+            });
+            pyodide.runPython(`
+          import micropip
+          micropip.install('pygame')
+        `);
+            // Load your Python code here
+            pyodid.runPython(`
+            from js import XMLHttpRequest, window
+            
+            def load_code(url):
+                req = XMLHttpRequest.new()
+                req.open("GET", url, False)
+                req.send(None)
+                return req.responseText
+
+            game_code = load_code('game.py')
+            exec(game_code)
+            `)
+
+        });
+    </script>
+</body>
+
+</html>
