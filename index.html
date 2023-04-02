@@ -4,15 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <title>Pygame on Web</title>
-    <script type="text/javascript" src="pyodide/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.0/full/pyodide.js"></script>
 </head>
 
 <body>
     <script type="text/javascript">
-        window.languagePluginUrl = "pyodide/";
         window.addEventListener("load", async function () {
             await loadPyodide({
-                indexURL: "pyodide/"
+                indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.0/full/"
             });
             pyodide.runPython(`
           import micropip
