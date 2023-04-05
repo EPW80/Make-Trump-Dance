@@ -20,6 +20,11 @@ To run the game, navigate to the videogame folder and run the game.py script:
 cd videogame
 python game.py
 Upon launching the game, you'll see the main menu scene with the title and the dancing Trump GIF. Press esc key to exit the game.
+
+### Note:
+
+you can also use chmod u+x hello.py
+this will allow the program to run by entering ./hello.py in your terminal
 ```
 
 ## Project Structure
