@@ -1,4 +1,4 @@
-# Make Trump Dance
+# Pygame Trump.gif
 
 Make Trump Dance is a simple and entertaining game developed using the Pygame library. The game showcases a main menu with a title and a dancing Trump GIF at the center of the screen. Background music plays during the main menu scene, adding a fun atmosphere to the game.
 
